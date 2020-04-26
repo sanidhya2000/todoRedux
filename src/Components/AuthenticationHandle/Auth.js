@@ -6,7 +6,7 @@ export default class Auth{
     auth0 = new auth0.WebAuth({
         domain:"dev-zktpn9re.auth0.com",
         clientID:"TJ1VKg3FVRqTKZC1h1cwBHwUEavN608m",
-        redirectUri:"http://localhost:3000/callback",
+        redirectUri:"https://todousereact.herokuapp.com/callback",
         audience:"https://dev-zktpn9re.auth0.com/userinfo",
         responseType:"token id_token",
         scope:"openid profile"
@@ -52,7 +52,7 @@ export default class Auth{
         localStorage.setItem("expires_at",null);
         localStorage.setItem("todoList",JSON.stringify([]));
         this.auth0.logout({
-            returnTo:'http://localhost:3000/'
+            returnTo:'https://todousereact.herokuapp.com/'
         })
         
     }
